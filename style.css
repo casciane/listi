@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+@font-face {
+    font-family:fonte1 ;
+    src: url(Raillinc.otf);
+}
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: rgba(134, 149, 194, 0.705);
+    text-align: center;
+    background-size: cover;
+    padding: 6%;
+
+    
+}
+
+.quiz-container{
+    max-width: 600px;
+    margin: 90px auto ;
+    
+}
+
+#opcoes{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: grey;
+}
+
+button{
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+h1{
+    font-family: fonte1;
+}
+
+input{
+    font-family: fonte1;
+    border-radius: 50px;
+}
+
+button{
+    font-family: fonte1;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefa</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+
+        #taskInput{
+             width: 18%;
+            margin-bottom: 1px; 
+        }
+
+        #taskList{
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .taskItem{
+            margin-bottom: 5px;
+        }
+
+        .taskItem button{
+             margin-left: 5px;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>Lista de Tarefas</h1>
+
+    <input type="text" id="taskInput" placeholder="
+    Digite uma tarefa"> 
+
+    <button onclick="addTask()">Adicionar Tarefa</button>
+
+    <ul id="taskList">
+
+
+    </ul>
+
+    <script>
+        function addTask() {
+
+            var taskInput = document.getElementById("taskInput");
+
+            var taskText = taskInput.value.trim();
+
+            if (taskText !== "") {
+                var taskList = document.getElementById("taskList");
+                var li = document.createElement("li");
+                li.className = "taskItem";
+                li.innerHTML = taskText + '<button onclick="removeTask(this)">Remover</button>';
+                taskList.appendChild(li);
+                taskInput.value = "";
+            } else {
+
+                alert("Por favor, insira uma tarefa válida.");
+
+            }
+
+        }
+
+        function removeTask(button) {
+            var li = button.parentNode;
+            var ul = li.parentNode;
+            ul.removeChild(li);
+        }
+    </script>
+</body>
+</html>
